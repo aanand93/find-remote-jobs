@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  find-remote-jobs:
+    build: ./
+    container_name: find-remote-jobs-c
+    ports:
+      - '3000:3000'
+    volumes: 
+      - ./src/:/app/src
+    stdin_open: true
+    tty: true
