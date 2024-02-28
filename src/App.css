@@ -3,6 +3,10 @@
   background-color: rgb(177, 197, 238);
 }
 
+.App-child-container { 
+  min-height: 100vh;
+}
+
 /* Unvisted Link */
 a:link {
   /* padding: 1em; */

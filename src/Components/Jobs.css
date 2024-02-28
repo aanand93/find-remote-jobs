@@ -96,7 +96,7 @@ img {
 
 .job-title,
 .company-name,
-.job-type {
+.job-type, .salary {
     margin: 0;
     /* Remove any default margin */
     padding-bottom: 5px;

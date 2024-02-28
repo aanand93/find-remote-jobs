@@ -62,21 +62,36 @@ const Jobs = () => {
 		<div>
 			<h2>Remote Jobs</h2>
 			<div className='container'>
+				{/* Each indivual card mapped via each job */}
 				{jobs.map((job) => (
 					<div className='card' key={job.id}>
 						<div className='card-image'>
 							<img src={job.companyLogo} alt={job.id} />
 						</div>
-						{/* Render job details here */}
+						{/* Job Title */}
 						<h3 className='job-title'>{job.jobTitle}</h3>
+						{/* Company Name */}
 						<p className='company-name'>{job.companyName}</p>
+						{/* Job Type */}
 						<p className='job-type'>Job Type: {job.jobType}</p>
+						{/* Salary */}
+						<p className='salary'>
+							{job.annualSalaryMin && job.annualSalaryMax
+								? `$${parseInt(
+										job.annualSalaryMin
+								  ).toLocaleString()} - $${parseInt(
+										job.annualSalaryMax
+								  ).toLocaleString()}`
+								: 'N/A'}
+						</p>
+						{/* Apply Here Button */}
 						<button
 							className='apply-here-button'
 							alt='apply-here-button'
 							onClick={() => handleApplyButtonClick(job.url)}>
 							Apply Here
 						</button>
+						{/* Description Container */}
 						<div className='description-container'>
 							<div className='job-description'>
 								<h5>Job Description</h5>
@@ -85,15 +100,6 @@ const Jobs = () => {
 									...
 								</p>
 								<p className='pubDate'>Posted: {formatPubDate(job.pubDate)}</p>
-								<p className='salary'>
-									{job.annualSalaryMin && job.annualSalaryMax
-										? `$${parseInt(
-												job.annualSalaryMin
-										  ).toLocaleString()} - $${parseInt(
-												job.annualSalaryMax
-										  ).toLocaleString()}`
-										: null}
-								</p>
 							</div>
 						</div>
 						{/* Additional job details can be rendered here */}

@@ -1,3 +1,50 @@
+# Find Remote Jobs app
+
+## Project Description
+
+> This is a remote job search website built using React. I am utilizing Jobicy's API to pull remote jobs from their database.
+
+## Link to API and Documentation
+
+> API: https://jobicy.com/api/v2/remote-jobs
+> Docs: https://jobicy.com/jobs-rss-feed#section3
+
+## Example data response from Jobicy API
+
+```json
+{
+	"id": "Unique Job ID",
+	"url": "Job link",
+	"jobTitle": "Job title",
+	"companyName": "Company name",
+	"companyLogo": "Company logo link",
+	"jobIndustry": "Job function (industry)",
+	"jobType": "Job type (full-time, contract, part-time or internship)",
+	"jobGeo": "Geographic restriction for employment (or Anywhere if not applicable)",
+	"jobLevel": "Seniority level (or Any if not applicable)",
+	"jobExcerpt": "Excerpt job description (max 55 characters)",
+	"jobDescription": "Full job description (HTML)",
+	"pubDate": "Publication date and time (UTC+00:00)",
+	"annualSalaryMin": "Annual min salary (if applicable)",
+	"annualSalaryMax": "Annual max salary (if applicable)",
+	"salaryCurrency": "ISO 4217 salary currency code (if applicable)"
+}
+```
+
+## Docker
+
+> Step 1: Download Docker and follow the getting started guide
+
+- https://www.docker.com/products/docker-desktop/
+
+> step 2: To run a development server use the script
+
+- `$ docker-compose up --build`
+
+> step 3: To shut down the server use `ctrl c` or run the script
+
+- `$ docker-compose down`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
