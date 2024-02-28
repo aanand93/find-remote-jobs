@@ -34,7 +34,11 @@ const Jobs = () => {
 			.catch((error) => {
 				console.error('There was a problem with the fetch operation:', error);
 			});
-	}, []); // Empty dependency array to run the effect only once on component mount
+	}, [url]); // Empty dependency array to run the effect only once on component mount
+
+	const handleApplyButtonClick = (jobUrl) => {
+		window.open(jobUrl, '_blank'); // Open job URL in a new tab
+	};
 
 	return (
 		<div>
@@ -48,8 +52,13 @@ const Jobs = () => {
 						{/* Render job details here */}
 						<h3>{job.jobTitle}</h3>
 						<p>Company: {job.companyName}</p>
-						<p>Job Type: {job.jobType}</p>
-						<a href={job.url}>Apply Here</a>
+						<p className='job-type'>Job Type: {job.jobType}</p>
+						<button
+							className='apply-here-button'
+							alt='apply-here-button'
+							onClick={() => handleApplyButtonClick(job.url)}>
+							Apply Here
+						</button>
 						<div className='description-container'>
 							<div className='job-description'>
 								<h5>Job Description</h5>
