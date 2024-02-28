@@ -93,3 +93,11 @@ img {
     color: green;
     font-weight: bold;
 }
+
+.job-title,
+.company-name,
+.job-type {
+    margin: 0;
+    /* Remove any default margin */
+    padding-bottom: 5px;
+}

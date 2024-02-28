@@ -68,8 +68,8 @@ const Jobs = () => {
 							<img src={job.companyLogo} alt={job.id} />
 						</div>
 						{/* Render job details here */}
-						<h3>{job.jobTitle}</h3>
-						<p>{job.companyName}</p>
+						<h3 className='job-title'>{job.jobTitle}</h3>
+						<p className='company-name'>{job.companyName}</p>
 						<p className='job-type'>Job Type: {job.jobType}</p>
 						<button
 							className='apply-here-button'
