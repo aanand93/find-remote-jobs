@@ -5,7 +5,7 @@ import './Jobs.css';
 const Jobs = () => {
 	const [jobs, setJobs] = useState([]);
 	const url =
-		'https://jobicy.com/api/v2/remote-jobs?count=50&geo=usa&tag=software+engineer';
+		'https://jobicy.com/api/v2/remote-jobs?count=50&geo=usa&tag=javascript';
 
 	/*
     API Query Parameters (optional)
