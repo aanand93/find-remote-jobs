@@ -14,3 +14,25 @@
     display: grid;
     grid-template-rows: 1fr;
 }
+
+.card-image {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    max-width: 40%;
+    height: auto;
+    padding: 10px;
+}
+
+.description-container {
+    padding: 5px;
+}
+.job-description {
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 5px;
+
+}
