@@ -11,8 +11,10 @@
 .card {
     border: 5px solid black;
     border-radius: 1rem;
-    display: grid;
+    /* display: grid; */
     grid-template-rows: 1fr;
+    padding: 5px;
+    
 }
 
 .card-image {

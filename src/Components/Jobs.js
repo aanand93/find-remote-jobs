@@ -29,12 +29,12 @@ const Jobs = () => {
 			})
 			.then((data) => {
 				setJobs(data.jobs); // Update state with fetched data
-				console.log(jobs); // show data in console
+				console.log(data.jobs); // Show data in console
 			})
 			.catch((error) => {
 				console.error('There was a problem with the fetch operation:', error);
 			});
-	}, [url]); // Empty dependency array to run the effect only once on component mount
+	}, []); // Empty dependency array to run the effect only once on component mount
 
 	return (
 		<div>
