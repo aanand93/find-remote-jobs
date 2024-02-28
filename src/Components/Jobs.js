@@ -36,8 +36,26 @@ const Jobs = () => {
 			});
 	}, [url]); // Empty dependency array to run the effect only once on component mount
 
+	// onClick method for apply now button
 	const handleApplyButtonClick = (jobUrl) => {
 		window.open(jobUrl, '_blank'); // Open job URL in a new tab
+	};
+
+	// Format the date
+	const formatPubDate = (pubDate) => {
+		// Create a new Date object from the provided date string
+		const date = new Date(pubDate);
+
+		// Check if the date is valid
+		if (!isNaN(date.getTime())) {
+			// Format the date as "Month Day, Year"
+			const month = date.toLocaleString('default', { month: 'short' }); // Get month abbreviation
+			const day = date.getDate(); // Get day of the month
+			const year = date.getFullYear(); // Get year
+			return `${month} ${day}, ${year}`;
+		} else {
+			return 'Invalid Date';
+		}
 	};
 
 	return (
@@ -51,7 +69,7 @@ const Jobs = () => {
 						</div>
 						{/* Render job details here */}
 						<h3>{job.jobTitle}</h3>
-						<p>Company: {job.companyName}</p>
+						<p>{job.companyName}</p>
 						<p className='job-type'>Job Type: {job.jobType}</p>
 						<button
 							className='apply-here-button'
@@ -62,7 +80,20 @@ const Jobs = () => {
 						<div className='description-container'>
 							<div className='job-description'>
 								<h5>Job Description</h5>
-								<p>{job.jobExcerpt}</p>
+								<p>
+									{job.jobExcerpt.replace(/[^a-zA-Z0-9\s]/g, '').slice(0, -7)}
+									...
+								</p>
+								<p className='pubDate'>Posted: {formatPubDate(job.pubDate)}</p>
+								<p className='salary'>
+									{job.annualSalaryMin && job.annualSalaryMax
+										? `$${parseInt(
+												job.annualSalaryMin
+										  ).toLocaleString()} - $${parseInt(
+												job.annualSalaryMax
+										  ).toLocaleString()}`
+										: null}
+								</p>
 							</div>
 						</div>
 						{/* Additional job details can be rendered here */}

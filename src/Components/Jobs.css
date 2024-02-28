@@ -20,7 +20,8 @@
     padding: 10px;
     /* margin-bottom: 10px; */
     transition: transform 0.3s ease;
-    display: center;
+    display: flex;
+    flex-direction: column;
     
 }
 
@@ -44,16 +45,22 @@ img {
 
 .description-container {
     padding: 1px;
+    min-height: auto;
+    flex-grow: 1; /* fills space */
+    display: flex;
+    flex-direction: column;
 }
+
 .job-description {
     border: 1px solid black;
     border-radius: 1rem;
     padding: 5px;
+    flex-grow: 1;
 
 }
 
-.job-type {
-    font-size: small;
+.job-type, .pubDate {
+    font-size: smaller;
 }
 
 .apply-here-button {
@@ -80,4 +87,9 @@ img {
 .apply-here-button:active {
     background-color: #a393ca;
     transform: scale(1.5);
+}
+
+.salary {
+    color: green;
+    font-weight: bold;
 }
