@@ -7,6 +7,7 @@
 ## Link to API and Documentation
 
 > API: https://jobicy.com/api/v2/remote-jobs
+
 > Docs: https://jobicy.com/jobs-rss-feed#section3
 
 ## Example data response from Jobicy API
