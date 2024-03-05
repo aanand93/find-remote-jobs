@@ -10,10 +10,6 @@
 
 <img width="481" alt="Screenshot 2024-03-05 at 12 57 46 PM" src="https://github.com/aanand93/find-remote-jobs/assets/77586218/7c330959-f84c-4add-bdc0-e2d2223823a1">
 
-> Jobs.js
-
-<img width="962" alt="Screenshot 2024-03-05 at 12 58 10 PM" src="https://github.com/aanand93/find-remote-jobs/assets/77586218/e66bad96-b0d4-421f-b349-7c127ee39719">
-
 > Jobs.js dynamically generated grid via api call
 
 <img width="958" alt="Screenshot 2024-03-05 at 12 58 42 PM" src="https://github.com/aanand93/find-remote-jobs/assets/77586218/606dd2f4-34d5-47ef-91c4-aa2b21567ae1">
