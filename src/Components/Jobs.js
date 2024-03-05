@@ -4,8 +4,9 @@ import './Jobs.css';
 
 const Jobs = () => {
 	const [jobs, setJobs] = useState([]);
-	const url =
-		'https://jobicy.com/api/v2/remote-jobs?count=50&geo=usa&tag=javascript';
+	const [tag, setTag] = useState([]);
+
+	const baseUrl = 'https://jobicy.com/api/v2/remote-jobs';
 
 	/*
     API Query Parameters (optional)
@@ -19,8 +20,11 @@ const Jobs = () => {
         
     */
 
-	useEffect(() => {
-		fetch(url)
+	// Handle search button click
+	const handleSearch = () => {
+		// Fetch jobs based on the current tag
+		const apiUrl = tag ? `${baseUrl}?count=50&geo=usa&tag=${tag}` : baseUrl;
+		fetch(apiUrl)
 			.then((res) => {
 				if (!res.ok) {
 					throw new Error('Network response was not ok');
@@ -34,7 +38,7 @@ const Jobs = () => {
 			.catch((error) => {
 				console.error('There was a problem with the fetch operation:', error);
 			});
-	}, [url]); // Empty dependency array to run the effect only once on component mount
+	};
 
 	// onClick method for apply now button
 	const handleApplyButtonClick = (jobUrl) => {
@@ -58,12 +62,37 @@ const Jobs = () => {
 		}
 	};
 
+	// Handle search query change
+	const handleSearchChange = (event) => {
+		setTag(event.target.value);
+	};
+
+	// Handle key press event on the search input
+	const handleKeyPress = (event) => {
+		if (event.key === 'Enter') {
+			handleSearch();
+		}
+	};
+
 	return (
 		<div>
 			<h2>Remote Jobs</h2>
+			{/* Search bar */}
+			<input
+				className='search-bar'
+				type='text'
+				placeholder='Search for jobs...'
+				value={tag}
+				onChange={handleSearchChange}
+				onKeyPress={handleKeyPress} // Add key press event handler
+			/>
+			{/* Search button */}
+			<button className='search-button' onClick={handleSearch}>
+				Search
+			</button>
 			<div className='container'>
 				{/* Each indivual card mapped via each job */}
-				{jobs.map((job) => (
+				{jobs?.map((job) => (
 					<div className='card' key={job.id}>
 						<div className='card-image'>
 							<img src={job.companyLogo} alt={job.id} />
